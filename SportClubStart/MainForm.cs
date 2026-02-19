@@ -23,12 +23,9 @@ namespace SportClubStart
 
             if (!_db.TestConnection(out string errorText))
             {
-                MessageBox.Show("Ошибка подключения к БД: " + errorText,
-                    "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                Close();
-                return;
+                throw new Exception("Ошибка подключения к БД: " + errorText);
             }
+
 
             dtpStart.Value = DateTime.Now.AddMonths(-1);
             dtpEnd.Value = DateTime.Now;

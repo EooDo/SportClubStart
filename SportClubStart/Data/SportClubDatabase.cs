@@ -16,8 +16,8 @@ namespace SportClubStart.Data
 
         public SportClubDatabase()
         {
-            _dbPath = DbPathResolver.GetDatabasePath("SportClub.db");
-            _connectionString = $"Data Source={_dbPath};Version=3;";
+            _dbPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "SportClub.db");
+            _connectionString = "Data Source=SportClub.db;Version=3;";
         }
 
 
